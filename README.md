@@ -3,6 +3,16 @@
 Dieses Repo dokumentiert das Setup des Hermes-Agenten (Profil `qwen38`) und die
 aktiven Modell-Parameter, mit denen dieser Agent läuft.
 
+## Status (Stand: 02.11.2026)
+
+| Punkt | Stand |
+|---|---|
+| Hermes Agent | ✅ läuft auf `buerozorin` |
+| Modell | ✅ `qwen3.8-27b`, **voll lokal** — keine Cloud-API im Einsatz |
+| Agent-Test | ✅ Erste README-Version hat der Agent selbst erstellt, committet und gepusht |
+| GitHub-Anbindung | ✅ `gh` über das Terminal-Tool funktioniert (Commit + Push) |
+| Nachbearbeitung | Status-Abschnitt und Provider-Angabe manuell ergänzt |
+
 ## Architektur
 
 ```
@@ -12,7 +22,7 @@ aktiven Modell-Parameter, mit denen dieser Agent läuft.
 │     ├─ Skills      (prozedurales Wissen)    │
 │     ├─ Memory      (persistente Fakten)    │
 │     ├─ Tools       (terminal, browser, ...)│
-│     └─ LLM Backend (custom provider)       │
+│     └─ LLM Backend (lokal, qwen3.8-27b)    │
 └──────────────────────────────────────────────┘
 ```
 
@@ -26,7 +36,7 @@ aktiven Modell-Parameter, mit denen dieser Agent läuft.
 | Feld | Wert |
 |---|---|
 | Modellname | `qwen3.8-27b` |
-| Provider | `custom` (lokaler/externer Endpoint) |
+| Provider | `custom` — lokaler Endpoint auf `buerozorin` |
 | Parameter | Standard (Temperatur etc. nicht hier gesetzt) |
 | Kontextfenster | ~128k Tokens (Qwen-3.8-27B-Klasse) |
 | Sprache | Deutsch / Englisch (spiegelt Gesprächssprache) |
